@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  astronauts-be:
+    container_name: astronauts-be
+    build: .
+    restart: always
+    ports:
+      - 3049:3049
+    environment:
+      PORT: 3049
+    env_file:
+      - .db.env
+    network_mode: "host"
